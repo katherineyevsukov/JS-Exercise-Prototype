@@ -129,13 +129,17 @@ console.log(jordan.toString());
   Baby.prototype.play = function(){
     return `Playing with ${this.favoriteToy}`;
   }
+
+  const baby1 = new Baby('Clem', 8, 'purple mouse');
+
+  console.log('task1:', baby1.play());
   /* 
     TASK 4
     In your own words explain the four principles for the "this" keyword below:
-    1. 
-    2. 
-    3. 
-    4. 
+    1. Window binding - if we do not give 'this' any context, it will return the window to us, the global object in node, or undefined in strict mode.
+    2. Implicit binding - the most commonly used case-- when we use 'this' in an object with a method.  In this case, the 'this' will refer to whatever is left of the dot.
+    3. Explicit Binding - when we use .bind, .call, or .apply to pass in what we want 'this' to refer to as an argument.
+    4. New binding - used when a constructor function is invoked to created a new object using the 'new' keyword. 'This' will now refer to the new object.
   */
   
   
