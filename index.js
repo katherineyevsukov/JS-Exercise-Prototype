@@ -107,9 +107,21 @@ console.log(jordan.toString());
     return this.tank
   }
 
+  Car.prototype.drive = function(distance){
+    this.odometer += distance;
+    this.tank = this.tank - (distance / this.milesPerGallon);
+    if (this.tank > 0){
+      return `odometer: ${this.odometer} tank: {this.tank}`}
+    else if (this.tank <= 0){
+      return `I ran out of fuel at ${this.odometer} miles!`
+    }
+  }
+
   const car1 = new Car('Subaru', 30);
 
   car1.fill(15);
+
+  console.log('stretch:', car1.drive(750));
 
   console.log('task 2', car1);
   /*
